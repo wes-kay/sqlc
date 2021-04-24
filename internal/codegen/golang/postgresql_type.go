@@ -62,9 +62,9 @@ func postgresType(r *compiler.Result, col *compiler.Column, settings config.Comb
 		//
 		// https://github.com/lib/pq/issues/648
 		if notNull {
-			return "string"
+			return "int64"
 		}
-		return "sql.NullString"
+		return "sql.NullInt64"
 
 	case "boolean", "bool", "pg_catalog.bool":
 		if notNull {
